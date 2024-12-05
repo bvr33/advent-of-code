@@ -13,4 +13,5 @@ using AdventOfCode2024.src.day_5;
 // Day_3_2.Run();
 // Day_4_1.Run();
 // Day_4_2.Run();
-Day_5_1.Run();
+// Day_5_1.Run();
+Day_5_2.Run();

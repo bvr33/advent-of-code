@@ -33,7 +33,7 @@ namespace AdventOfCode2024.src.day_5
 
             foreach (int[] instruction in instructionsList)
             {
-                if (isCorrectInstruction(rulesAfterMap, rulesBeforeMap, instruction)) correctInstructions.Add(instruction);
+                if (IsCorrectInstruction(rulesAfterMap, rulesBeforeMap, instruction)) correctInstructions.Add(instruction);
             }
 
             int instructionSum = correctInstructions.Sum(instruction => instruction[instruction.Length / 2]);
@@ -41,7 +41,7 @@ namespace AdventOfCode2024.src.day_5
             Console.WriteLine(instructionSum);
         }
 
-        private static bool isCorrectInstruction(Dictionary<int, List<int>> rulesAfterMap, Dictionary<int, List<int>> rulesBeforeMap, int[] instruction)
+        private static bool IsCorrectInstruction(Dictionary<int, List<int>> rulesAfterMap, Dictionary<int, List<int>> rulesBeforeMap, int[] instruction)
         {
             return Enumerable.Range(1, instruction.Length - 1).All(i =>
             {
