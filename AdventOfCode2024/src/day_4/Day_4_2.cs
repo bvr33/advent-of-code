@@ -9,7 +9,7 @@ namespace AdventOfCode2024.src.day_4
         {
             string[] inputFileLines = InputReader.GetFileLinesRecursiveToSrcFolder("day_4/input.txt").ToArray();
 
-            char[,] char2dArray = Get2DCharArray(inputFileLines);
+            char[,] char2dArray = Utils.Get2DCharArray(inputFileLines);
 
             int soughtValueCount = 0;
             for (int i = 0; i < char2dArray.GetLength(0); i++)
@@ -43,21 +43,6 @@ namespace AdventOfCode2024.src.day_4
         {
             string reversedSearchedValue = new(searchedValue.Reverse().ToArray());
             return searchedValue == valueToCheck || reversedSearchedValue == valueToCheck;
-        }
-
-        private static char[,] Get2DCharArray(string[] inputFileLines)
-        {
-            char[,] charArray = new char[inputFileLines.Length, inputFileLines[0].Length];
-
-            for (int i = 0; i < inputFileLines.Length; i++)
-            {
-                for (int j = 0; j < inputFileLines[0].Length; j++)
-                {
-                    charArray[i, j] = inputFileLines[i][j];
-                }
-            }
-
-            return charArray;
         }
     }
 }
